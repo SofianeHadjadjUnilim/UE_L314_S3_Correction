@@ -1,0 +1,68 @@
+<div>
+    <h4>Update User</h4>
+
+    <div *ngFor="let user of users; let i = index">
+
+        <form>
+        
+            <div>
+                <input type="hidden" id="{{ user.id }}" [value]="user.id" name="update" #update>
+                <label for="{{ user.id }}"> <strong>{{ user.firstname }}</strong>  {{ user.lastname }}</label>
+            </div>
+
+            <div>
+                <label for="firstname">Firstname</label>
+                <input
+                  type="text"
+                  id="{{ user.firstname }}"
+                  name="firstname"
+                  value="{{ user.firstname }}"
+                  placeholder="{{ user.firstname }}"
+                  #firstname
+                />
+              </div>
+        
+              <div>
+                <label for="lastname">lastname</label>
+                <input
+                  type="text"
+                  id="{{ user.lastname }}"
+                  name="lastname"
+                  value="{{ user.lastname }}"
+                  placeholder="{{ user.lastname }}"
+                  #lastname
+                />
+              </div>
+        
+              <div>
+                <label for="email">email</label>
+                <input
+                  type="text"
+                  id="{{ user.email }}"
+                  name="email"
+                  value="{{ user.email }}"
+                  placeholder="{{ user.email }}"
+                  #email
+                />
+              </div>
+        
+              <div>
+                <label for="password">password</label>
+                <input
+                  type="text"
+                  id="{{ user.password }}"
+                  name="password"
+                  value="{{ user.password }}"
+                  placeholder="{{ user.password }}"
+                  #password
+                />
+              </div>
+
+            <button style="display: inline; margin-left: 20px;" type="submit" (click)="updateUser(update.id,firstname.value,lastname.value,email.value,password.value)" >Mettre à jour</button>
+            <br>
+            <p>##########</p>
+            <br>
+        
+        </form>   
+    </div>
+</div>
